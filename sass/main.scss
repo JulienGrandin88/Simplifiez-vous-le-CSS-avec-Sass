@@ -20,9 +20,10 @@ html, body {
 }
 
 $color-primary: #15DEA5;
+$color-secondary: #EA526F;
 
-@mixin border {
-    border: .1rem solid $color-primary;
+@mixin border ($color:$color-primary) {
+  border: .1rem solid $color;
 }
 
 .btn {
@@ -36,6 +37,10 @@ $color-primary: #15DEA5;
     background: transparent;
     @include border;
     color: $color-primary;
+    &.btn--pink {
+      @include border($color-secondary);
+      color: $color-secondary;
+    }
   }
 }
 
